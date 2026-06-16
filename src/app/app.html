@@ -1,1 +1,60 @@
-<h1>chantier garage spl9-saint cloud</h1>
+<header style="padding: 20px 5%; font-family: 'Segoe UI', sans-serif; background-color: #b4b8d6; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+  
+  <div style="flex-shrink: 0; background: white; padding: 5px; border-radius: 4px;">
+    <div style="width: 50px; height: 50px; background-color: #1e3a8a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.8rem; text-align: center;">SPL 92</div>
+  </div>
+
+  <nav style="display: flex; gap: 25px; align-items: center;">
+    <button (click)="naviguerVers('Accueil')" style="background: none; border: none; color: #2c3e50; font-weight: 600; font-size: 1.1rem; cursor: pointer;">Accueil</button>
+    <button (click)="naviguerVers('Nos services Auto')" style="background: none; border: none; color: #2c3e50; font-weight: 600; font-size: 1.1rem; cursor: pointer;">Nos services Auto</button>
+    <button (click)="naviguerVers('A propos')" style="background: none; border: none; color: #2c3e50; font-weight: 600; font-size: 1.1rem; cursor: pointer;">A propos</button>
+    <button (click)="naviguerVers('Contact')" style="background: none; border: none; color: #2c3e50; font-weight: 600; font-size: 1.1rem; cursor: pointer;">Contact</button>
+  </nav>
+
+  <div>
+    <button (click)="ouvrirFormulaireRDV()" style="background-color: #22c55e; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      Prise de Rendez-Vous
+    </button>
+  </div>
+</header>
+
+<main style="font-family: 'Segoe UI', sans-serif; background-color: #b4b8d6; padding-bottom: 40px; min-height: 80vh;">
+  
+  <div style="width: 100%; max-height: 400px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <img src="tama66-truck-4349523_1920.jpg" alt="Bannière Garage SPL 92" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+
+  <div style="text-align: center; padding: 40px 10%; color: #1e293b;">
+    <h2 style="font-size: 1.8rem; font-weight: 700; line-height: 1.4; max-width: 800px; margin: 0 auto;">
+      "Notre Garage PL ne fait pas que réparer, il a un rôle légal crucial pour maintenir les flottes."
+    </h2>
+  </div>
+
+  <div style="padding: 20px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+    
+    @for (camion of vehicules; track camion.id) {
+      <div style="background: #cbd5e1; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+        <img [src]="camion.image" alt="Photo Poids Lourd" style="width: 100%; height: 220px; object-fit: cover;">
+        
+        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; text-align: center;">
+          <div>
+            <h3 style="color: #1e293b; margin: 0 0 10px 0; font-size: 1.4rem;">{{ camion.marque }}</h3>
+            <p style="color: #475569; margin: 0 0 15px 0; font-style: italic;">{{ camion.modele }}</p>
+            <span [style.background-color]="camion.statut === 'Disponible' ? '#22c55e' : '#ef4444'" style="color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-bottom: 20px;">
+              {{ camion.statut }}
+            </span>
+          </div>
+          
+          <button (click)="voirDetails(camion.marque, camion.modele)" style="width: 100%; padding: 12px; background-color: #1e3a8a; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;">
+            Consulter la fiche
+          </button>
+        </div>
+      </div>
+    }
+
+  </div>
+</main>
+
+<footer style="background-color: #000000; color: white; text-align: center; padding: 20px; font-family: 'Segoe UI', sans-serif; font-size: 1.1rem; letter-spacing: 1px;">
+  Nos services sur les réseaux sociaux
+</footer>
