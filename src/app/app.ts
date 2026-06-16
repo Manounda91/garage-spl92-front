@@ -10,10 +10,34 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // Liste de ta flotte de camions
   vehicules = [
-    { id: 1, marque: 'Freightliner', modele: 'Classic XL Chromé', statut: 'Disponible', image: 'alles-transport-4887423_1920.jpg' },
-    { id: 2, marque: 'Volvo Trucks', modele: 'FH 460 Citerne', statut: 'En Maintenance', image: 'hpgruesen-tank-truck-1388933_1920 (2).jpg' },
-    { id: 3, marque: 'MAN', modele: 'TGX Container Rouge', statut: 'Disponible', image: 'kalhh-truck-333251_1920.jpg' },
-    { id: 4, marque: 'Peterbilt', modele: '389 Confort USA', statut: 'Disponible', image: 'rauschenberger-usa-3208827_1920.jpg' }
+    { 
+      id: 1, 
+      marque: 'Freightliner', 
+      modele: 'Classic XL Chromé', 
+      statut: 'Disponible', 
+      image: 'alles-transport-4887423-1920.png' // Modifié avec le tiret du milieu et .png
+    },
+    { 
+      id: 2, 
+      marque: 'Volvo Trucks', 
+      modele: 'FH 460 Citerne', 
+      statut: 'En Maintenance', 
+      image: 'hpgruesen-tank-truck-1388933-1920 (2).jpg' // Modifié avec le tiret du milieu et l'espace
+    },
+    { 
+      id: 3, 
+      marque: 'MAN', 
+      modele: 'TGX Container Rouge', 
+      statut: 'Disponible', 
+      image: 'kalhh-truck-333251-1920.jpg' // Modifié avec le tiret du milieu
+    },
+    { 
+      id: 4, 
+      marque: 'Peterbilt', 
+      modele: '389 Confort USA', 
+      statut: 'Disponible', 
+      image: 'rauschenberger-usa-3208827-1920.jpg' // Modifié avec le tiret du milieu
+    }
   ];
 
   // --- ACTIONS DES BOUTONS DU MENU NAVIGATION ---
